@@ -31,7 +31,6 @@ final class NarsilMailsServiceProvider extends ServiceProvider
     {
         $this->bootMigrations();
         $this->bootPolicies();
-        $this->bootRoutes();
         $this->bootTranslations();
     }
 
@@ -57,14 +56,6 @@ final class NarsilMailsServiceProvider extends ServiceProvider
         Gate::policy(EmailSignature::class, EmailSignaturePolicy::class);
         Gate::policy(EmailTemplate::class, EmailTemplatePolicy::class);
         Gate::policy(Mailer::class, MailerPolicy::class);
-    }
-
-    /**
-     * @return void
-     */
-    private function bootRoutes(): void
-    {
-        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
     }
 
     /**
