@@ -1,6 +1,6 @@
 <?php
 
-namespace Narsil\Auth\Http\Menus;
+namespace Narsil\Mails\Http\Menus;
 
 #region USE
 
