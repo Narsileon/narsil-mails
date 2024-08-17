@@ -29,8 +29,16 @@ class EmailTemplate extends Model
     {
         $this->table = self::TABLE;
 
+        $this->casts = [
+            self::ACTIVE => 'boolean',
+        ];
+
         $this->guarded = [
             self::ID,
+        ];
+
+        $this->with = [
+            self::RELATIONSHIP_LANGUAGE
         ];
 
         parent::__construct($attributes);
@@ -43,57 +51,61 @@ class EmailTemplate extends Model
     /**
      * @var string
      */
-    final public const ACTION = "action";
+    final public const ACTION = 'action';
     /**
      * @var string
      */
-    final public const ACTIVE = "active";
+    final public const ACTIVE = 'active';
     /**
      * @var string
      */
-    final public const CONTENT = "content";
+    final public const CONTENT = 'content';
     /**
      * @var string
      */
-    final public const HAS_SIGNATURE = "has_signature";
+    final public const HAS_SIGNATURE = 'has_signature';
     /**
      * @var string
      */
-    final public const ID = "id";
+    final public const ID = 'id';
     /**
      * @var string
      */
-    final public const IS_EXTERNAL = "is_external";
+    final public const IS_EXTERNAL = 'is_external';
     /**
      * @var string
      */
-    final public const LANGUAGE_ID = "language_id";
+    final public const LANGUAGE_ID = 'language_id';
     /**
      * @var string
      */
-    final public const MODEL_ID = "model_id";
+    final public const MODEL_ID = 'model_id';
     /**
      * @var string
      */
-    final public const MODEL_TYPE = "model_type";
+    final public const MODEL_TYPE = 'model_type';
     /**
      * @var string
      */
-    final public const REPLY_TO = "reply_to";
+    final public const REPLY_TO = 'reply_to';
     /**
      * @var string
      */
-    final public const SUBJECT = "subject";
+    final public const SUBJECT = 'subject';
 
     /**
      * @var string
      */
-    final public const RELATIONSHIP_MODEL = "model";
+    final public const RELATIONSHIP_MODEL = 'model';
+    /**
+     * @var string
+     */
+    final public const RELATIONSHIP_LANGUAGE = 'language';
 
     /**
      * @var string
      */
-    final public const TABLE = "email_templates";
+    final public const TABLE = 'email_templates';
 
     #endregion
 

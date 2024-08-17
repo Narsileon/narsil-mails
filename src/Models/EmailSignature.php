@@ -28,6 +28,10 @@ class EmailSignature extends Model
     {
         $this->table = self::TABLE;
 
+        $this->casts = [
+            self::ACTIVE => 'boolean',
+        ];
+
         $this->guarded = [
             self::ID,
         ];
@@ -46,29 +50,29 @@ class EmailSignature extends Model
     /**
      * @var string
      */
-    final public const ACTIVE = "active";
+    final public const ACTIVE = 'active';
     /**
      * @var string
      */
-    final public const CONTENT = "content";
+    final public const CONTENT = 'content';
     /**
      * @var string
      */
-    final public const ID = "id";
+    final public const ID = 'id';
     /**
      * @var string
      */
-    final public const LANGUAGE_ID = "language_id";
+    final public const LANGUAGE_ID = 'language_id';
 
     /**
      * @var string
      */
-    final public const RELATIONSHIP_LANGUAGE = "language";
+    final public const RELATIONSHIP_LANGUAGE = 'language';
 
     /**
      * @var string
      */
-    final public const TABLE = "email_signatures";
+    final public const TABLE = 'email_signatures';
 
     #endregion
 

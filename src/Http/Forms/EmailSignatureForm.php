@@ -30,8 +30,8 @@ class EmailSignatureForm extends AbstractForm
     public function __construct()
     {
         parent::__construct(
-            slug: "email-signature",
-            title: "Email signature",
+            slug: 'email-signature',
+            title: 'Email signature',
         );
     }
 
@@ -57,13 +57,13 @@ class EmailSignatureForm extends AbstractForm
     protected function getSchema(): array
     {
         return [
-            (new FormCard("default"))
+            (new FormCard('default'))
                 ->children([
                     (new FormSelect(EmailSignature::LANGUAGE_ID))
                         ->labelKey(Language::LANGUAGE)
                         ->valueKey(Language::ID),
                     (new FormString(EmailSignature::CONTENT))
-                        ->nodeType("editor"),
+                        ->nodeType('editor'),
                 ]),
         ];
     }

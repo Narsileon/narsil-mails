@@ -29,8 +29,8 @@ class MailerForm extends AbstractForm
     public function __construct()
     {
         parent::__construct(
-            slug: "mailer",
-            title: "Mailer",
+            slug: 'mailer',
+            title: 'Mailer',
         );
     }
 
@@ -44,20 +44,20 @@ class MailerForm extends AbstractForm
     protected function getSchema(): array
     {
         return [
-            (new FormCard("default"))
+            (new FormCard('default'))
                 ->children([
                     (new FormString(Mailer::HOST)),
                     (new FormString(Mailer::PORT))
-                        ->type("number"),
+                        ->type('number'),
                     (new FormSelect(Mailer::ENCRYPTION))
                         ->options(array_map(fn($case) => $case->value, EncryptionEnum::cases())),
                     (new FormString(Mailer::EMAIL))
-                        ->type("email"),
+                        ->type('email'),
                     (new FormString(Mailer::USERNAME)),
                     (new FormString(Mailer::PASSWORD))
-                        ->type("password"),
+                        ->type('password'),
                     (new FormString(Mailer::SENDER))
-                        ->type("email"),
+                        ->type('email'),
                 ]),
         ];
     }

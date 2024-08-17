@@ -29,6 +29,7 @@ class Mailer extends Model
         $this->table = self::TABLE;
 
         $this->casts = [
+            self::ACTIVE => 'boolean',
             self::ENCRYPTION => EncryptionEnum::class,
         ];
 
@@ -50,44 +51,44 @@ class Mailer extends Model
     /**
      * @var string
      */
-    final public const ACTIVE = "active";
+    final public const ACTIVE = 'active';
     /**
      * @var string
      */
-    final public const EMAIL = "email";
+    final public const EMAIL = 'email';
     /**
      * @var string
      */
-    final public const ENCRYPTION = "encryption";
+    final public const ENCRYPTION = 'encryption';
     /**
      * @var string
      */
-    final public const HOST = "host";
+    final public const HOST = 'host';
     /**
      * @var string
      */
-    final public const ID = "id";
+    final public const ID = 'id';
     /**
      * @var string
      */
-    final public const PASSWORD = "password";
+    final public const PASSWORD = 'password';
     /**
      * @var string
      */
-    final public const PORT = "port";
+    final public const PORT = 'port';
     /**
      * @var string
      */
-    final public const SENDER = "sender";
+    final public const SENDER = 'sender';
     /**
      * @var string
      */
-    final public const USERNAME = "username";
+    final public const USERNAME = 'username';
 
     /**
      * @var string
      */
-    final public const TABLE = "mailers";
+    final public const TABLE = 'mailers';
 
     #endregion
 
