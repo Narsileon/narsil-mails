@@ -4,6 +4,7 @@ namespace Narsil\Auth\Http\Menus;
 
 #region USE
 
+use Narsil\Menus\Enums\VisibilityEnum;
 use Narsil\Menus\Http\Menus\AbstractMenu;
 use Narsil\Menus\Models\MenuNode;
 
@@ -26,14 +27,17 @@ class Menu extends AbstractMenu
         return [[
             MenuNode::LABEL => 'Mailers',
             MenuNode::URL => '/backend/mailers',
+            MenuNode::VISIBILITY => VisibilityEnum::AUTH->value,
             MenuNode::RELATIONSHIP_ICON => 'lucide/send',
         ], [
             MenuNode::LABEL => 'Email signatures',
             MenuNode::URL => '/backend/email-signatures',
+            MenuNode::VISIBILITY => VisibilityEnum::AUTH->value,
             MenuNode::RELATIONSHIP_ICON => 'lucide/signature',
         ], [
             MenuNode::LABEL => 'Email templates',
             MenuNode::URL => '/backend/email-templates',
+            MenuNode::VISIBILITY => VisibilityEnum::AUTH->value,
             MenuNode::RELATIONSHIP_ICON => 'lucide/mail',
         ]];
     }
