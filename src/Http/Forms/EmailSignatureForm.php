@@ -60,7 +60,6 @@ class EmailSignatureForm extends AbstractForm
             (new FormCard('default'))
                 ->children([
                     (new FormSelect(EmailSignature::LANGUAGE_ID))
-                        ->labelKey(Language::LANGUAGE)
                         ->valueKey(Language::ID),
                     (new FormString(EmailSignature::CONTENT))
                         ->nodeType('editor'),
